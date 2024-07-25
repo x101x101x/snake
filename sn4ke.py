@@ -10,11 +10,12 @@ height = 600
 window = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Snake Game")
 
+
 # Colors
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
+RED = (52, 235, 158)
+GREEN = (235, 52, 232)
 
 # Snake and food
 snake_block = 20
@@ -24,6 +25,7 @@ snake_speed = 10  # Starting speed
 clock = pygame.time.Clock()
 
 font = pygame.font.SysFont(None, 50)
+
 
 
 def our_snake(snake_block, snake_list):
@@ -62,8 +64,8 @@ def gameLoop():
     while not game_over:
 
         while game_close == True:
-            window.fill(BLACK)
-            message(f"You Lost!\nScore: {length_of_snake - 1}\nQ-Quit or C-Play Again", RED)
+            window.fill('pink')
+            message(f"You Lost!\nScore: {length_of_snake - 1}\nQ-Quit or C-Play Again", 'black')
             pygame.display.update()
 
             for event in pygame.event.get():
@@ -96,7 +98,7 @@ def gameLoop():
 
         x1 += x1_change
         y1 += y1_change
-        window.fill(BLACK)
+        window.fill('pink')
         pygame.draw.rect(window, RED, [foodx, foody, snake_block, snake_block])
         snake_head = []
         snake_head.append(x1)
